@@ -1,0 +1,791 @@
+23:47:16 **** Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11308	    156	   1572	  13036	   32ec	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+23:59:15 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'key_press':
+../Src/main.c:79:13: warning: implicit declaration of function 'check_clm' [-Wimplicit-function-declaration]
+   clm_var = check_clm(GPIO_PIN_0);
+             ^~~~~~~~~
+../Src/main.c: At top level:
+../Src/main.c:103:15: error: conflicting types for 'check_clm'
+ unsigned char check_clm(unsigned char pin_var){
+               ^~~~~~~~~
+../Src/main.c:79:13: note: previous implicit declaration of 'check_clm' was here
+   clm_var = check_clm(GPIO_PIN_0);
+             ^~~~~~~~~
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:00:43 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'key_press':
+../Src/main.c:79:13: warning: implicit declaration of function 'check_clm' [-Wimplicit-function-declaration]
+   clm_var = check_clm(GPIO_PIN_0);
+             ^~~~~~~~~
+../Src/main.c: At top level:
+../Src/main.c:103:15: error: conflicting types for 'check_clm'
+ unsigned char check_clm(unsigned char pin_var){
+               ^~~~~~~~~
+../Src/main.c:79:13: note: previous implicit declaration of 'check_clm' was here
+   clm_var = check_clm(GPIO_PIN_0);
+             ^~~~~~~~~
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:02:07 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'key_press':
+../Src/main.c:79:13: warning: implicit declaration of function 'check_clm' [-Wimplicit-function-declaration]
+   clm_var = check_clm(GPIO_PIN_0);
+             ^~~~~~~~~
+../Src/main.c: At top level:
+../Src/main.c:103:15: error: conflicting types for 'check_clm'
+ unsigned char check_clm(unsigned char pin_var){
+               ^~~~~~~~~
+../Src/main.c:79:13: note: previous implicit declaration of 'check_clm' was here
+   clm_var = check_clm(GPIO_PIN_0);
+             ^~~~~~~~~
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:08:06 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5316	     20	   1572	   6908	   1afc	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+00:19:18 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'Display':
+../Src/main.c:170:30: error: 'LEDS' undeclared (first use in this function)
+     HAL_GPIO_WritePin(GPIOA, LEDS[i], GPIO_PIN_SET);
+                              ^~~~
+../Src/main.c:170:30: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c: In function 'main':
+../Src/main.c:216:3: warning: implicit declaration of function 'Disp_CA'; did you mean 'Display'? [-Wimplicit-function-declaration]
+   Disp_CA(0, 8);
+   ^~~~~~~
+   Display
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:21:09 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11916	    156	   1572	  13644	   354c	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+ 
+00:27:20 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5316	     20	   1572	   6908	   1afc	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+00:28:24 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:160:16: warning: unused variable 'var1' [-Wunused-variable]
+  unsigned char var1;
+                ^~~~
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4836	     20	   1572	   6428	   191c	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+ 
+00:30:15 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:160:16: warning: unused variable 'var1' [-Wunused-variable]
+  unsigned char var1;
+                ^~~~
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4832	     20	   1572	   6424	   1918	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+00:32:46 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5296	     20	   1572	   6888	   1ae8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+00:38:40 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5296	     20	   1572	   6888	   1ae8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+ 
+Finished building: 4x4_matrix_keypad.list
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+00:39:37 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+ 
+00:47:26 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5296	     20	   1572	   6888	   1ae8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+00:55:48 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'check_row':
+../Src/main.c:98:3: error: 'row' undeclared (first use in this function)
+   row = 1;
+   ^~~
+../Src/main.c:98:3: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:93:16: warning: unused variable 'clm' [-Wunused-variable]
+  unsigned char clm;
+                ^~~
+../Src/main.c:121:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:56:06 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5504	     20	   1572	   7096	   1bb8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+00:57:11 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5504	     20	   1572	   7096	   1bb8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+00:59:18 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5520	     20	   1572	   7112	   1bc8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+01:02:54 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+01:04:51 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.list
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+ 
+01:05:50 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+01:08:26 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+01:09:26 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'key_press':
+../Src/main.c:99:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("AAAA");
+   ^~~~~~
+../Src/main.c:99:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:99:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9316	    120	   1584	  11020	   2b0c	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+ 
+01:09:51 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9316	    120	   1584	  11020	   2b0c	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+01:11:12 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+01:18:36 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4924	     20	   1572	   6516	   1974	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+01:22:40 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:199:33: error: 'pin_var' undeclared (first use in this function)
+      if(HAL_GPIO_ReadPin(GPIOB, pin_var) == 0){
+                                 ^~~~~~~
+../Src/main.c:199:33: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+01:23:14 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4932	     20	   1572	   6524	   197c	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+ 
+01:24:48 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5000	     20	   1572	   6592	   19c0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+01:26:29 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5000	     20	   1572	   6592	   19c0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.list
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+ 
+01:28:21 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4932	     20	   1572	   6524	   197c	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+ 
+01:30:23 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5288	     20	   1572	   6880	   1ae0	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.bin
+Finished building: 4x4_matrix_keypad.hex
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+01:32:05 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad.elf  > "4x4_matrix_keypad.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad.elf  "4x4_matrix_keypad.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad.elf  "4x4_matrix_keypad.bin"
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5280	     20	   1572	   6872	   1ad8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad.hex
+Finished building: 4x4_matrix_keypad.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad.list
+ 
+01:49:08 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5280	     20	   1572	   6872	   1ad8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+01:49:09 **** Build of configuration Debug for project 4x4_matrix_keypad_input ****
+make -j6 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
+../Src/main.c: In function 'main':
+../Src/main.c:123:47: warning: statement with no effect [-Wunused-value]
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0) && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+                                               ^~~~~~~~~~~~~~~~~~~
+../Src/main.c:123:66: error: expected ';' before '(' token
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0) && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+                                                                  ^
+../Src/main.c:123:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0) && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+     ^~
+../Src/main.c:123:87: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0) && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+                                                                                       ^
+../Src/main.c:123:87: error: expected statement before ')' token
+../Src/main.c:123:88: error: expected statement before ')' token
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0) && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+                                                                                        ^
+../Src/main.c:123:5: error: label 'HAL_GPIO_ReadPin' used but not defined
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0) && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+     ^~
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+01:49:30 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5280	     20	   1572	   6872	   1ad8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+01:49:31 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad_input ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+../Src/main.c: In function 'main':
+../Src/main.c:123:87: error: expected statement before ')' token
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0 && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+                                                                                       ^
+../Src/main.c:123:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0 && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+     ^~
+../Src/main.c:123:88: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+     if(HAL_GPIO_ReadPin(GPIOB, LEDS[0]) == 0 && HAL_GPIO_ReadPin(GPIOB, LEDS[4]) == 0)){
+                                                                                        ^
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+01:49:38 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5280	     20	   1572	   6872	   1ad8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+01:49:39 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad_input ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad_input.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad_input\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad_input.elf
+ 
+arm-none-eabi-size   4x4_matrix_keypad_input.elf 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad_input.elf  > "4x4_matrix_keypad_input.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad_input.elf  "4x4_matrix_keypad_input.hex"
+   text	   data	    bss	    dec	    hex	filename
+  11380	    156	   1572	  13108	   3334	4x4_matrix_keypad_input.elf
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad_input.elf  "4x4_matrix_keypad_input.bin"
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad_input.hex
+Finished building: 4x4_matrix_keypad_input.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad_input.list
+ 
+01:51:28 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5280	     20	   1572	   6872	   1ad8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+01:51:29 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad_input ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4x4_matrix_keypad_input.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Domaci_4\stm32\4x4_matrix_keypad_input\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4x4_matrix_keypad_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4x4_matrix_keypad_input.elf
+ 
+arm-none-eabi-objdump -h -S  4x4_matrix_keypad_input.elf  > "4x4_matrix_keypad_input.list"
+arm-none-eabi-objcopy  -O ihex  4x4_matrix_keypad_input.elf  "4x4_matrix_keypad_input.hex"
+arm-none-eabi-objcopy  -O binary  4x4_matrix_keypad_input.elf  "4x4_matrix_keypad_input.bin"
+arm-none-eabi-size   4x4_matrix_keypad_input.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11356	    156	   1572	  13084	   331c	4x4_matrix_keypad_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4x4_matrix_keypad_input.hex
+Finished building: 4x4_matrix_keypad_input.bin
+ 
+ 
+Finished building: 4x4_matrix_keypad_input.list
+ 

@@ -1,0 +1,10 @@
+01:51:28 **** Incremental Build of configuration Debug for project 4x4_matrix_keypad ****
+make -j6 all 
+arm-none-eabi-size   4x4_matrix_keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5280	     20	   1572	   6872	   1ad8	4x4_matrix_keypad.elf
+Finished building: default.size.stdout
+ 
+
+01:51:29 Build Finished. 0 errors, 0 warnings. (took 799ms)
+

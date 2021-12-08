@@ -1,0 +1,23 @@
+16:05:41 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5012	     68	   1572	   6652	   19fc	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+ 
+
+16:05:42 Build Finished. 0 errors, 0 warnings. (took 1s.379ms)
+

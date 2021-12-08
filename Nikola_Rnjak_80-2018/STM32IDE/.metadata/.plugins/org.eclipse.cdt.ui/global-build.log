@@ -1,0 +1,387 @@
+15:03:00 **** Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+   text	   data	    bss	    dec	    hex	filename
+   4472	     20	   1572	   6064	   17b0	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.hex
+ 
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+15:16:15 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4472	     20	   1572	   6064	   17b0	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.hex
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+15:19:53 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4548	     52	   1572	   6172	   181c	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+ 
+15:28:03 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4924	     68	   1572	   6564	   19a4	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+Finished building: Nikola_Rnjak_80-2018.hex
+ 
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+15:33:57 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:144:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [Src/subdir.mk:33: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+15:34:19 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4860	     68	   1572	   6500	   1964	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+ 
+15:36:58 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4856	     68	   1572	   6496	   1960	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.hex
+ 
+ 
+ 
+15:38:23 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4872	     68	   1572	   6512	   1970	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+Finished building: Nikola_Rnjak_80-2018.hex
+ 
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+ 
+15:41:01 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4868	     68	   1572	   6508	   196c	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+ 
+15:45:14 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5040	     68	   1572	   6680	   1a18	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+15:47:57 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4972	     68	   1572	   6612	   19d4	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+15:49:32 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4636	     68	   1572	   6276	   1884	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+ 
+15:50:38 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4652	     68	   1572	   6292	   1894	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+ 
+15:51:54 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4668	     68	   1572	   6308	   18a4	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.hex
+ 
+ 
+ 
+15:53:51 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4652	     68	   1572	   6292	   1894	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+ 
+16:01:28 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5012	     68	   1572	   6652	   19fc	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+ 
+ 
+16:01:58 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5012	     68	   1572	   6652	   19fc	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+16:03:45 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4932	     68	   1572	   6572	   19ac	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+Finished building: Nikola_Rnjak_80-2018.list
+ 
+16:05:41 **** Incremental Build of configuration Debug for project Nikola_Rnjak_80-2018 ****
+make -j6 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103x6 -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Nikola_Rnjak_80-2018.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Nikola_Rnjak_80-2018\STM32IDE\Nikola_Rnjak_80-2018\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nikola_Rnjak_80-2018.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nikola_Rnjak_80-2018.elf
+ 
+arm-none-eabi-objdump -h -S  Nikola_Rnjak_80-2018.elf  > "Nikola_Rnjak_80-2018.list"
+arm-none-eabi-objcopy  -O ihex  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.hex"
+arm-none-eabi-objcopy  -O binary  Nikola_Rnjak_80-2018.elf  "Nikola_Rnjak_80-2018.bin"
+arm-none-eabi-size   Nikola_Rnjak_80-2018.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5012	     68	   1572	   6652	   19fc	Nikola_Rnjak_80-2018.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nikola_Rnjak_80-2018.hex
+Finished building: Nikola_Rnjak_80-2018.list
+Finished building: Nikola_Rnjak_80-2018.bin
+ 
+ 
+ 
