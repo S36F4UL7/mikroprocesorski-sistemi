@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00003448  0800010c  0800010c  0001010c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000104  08003554  08003554  00013554  2**2
+  2 .rodata       00000100  08003554  08003554  00013554  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08003658  08003658  00020070  2**0
+  3 .ARM.extab    00000000  08003654  08003654  00020070  2**0
                   CONTENTS
-  4 .ARM          00000000  08003658  08003658  00020070  2**0
+  4 .ARM          00000000  08003654  08003654  00020070  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08003658  08003658  00020070  2**0
+  5 .preinit_array 00000000  08003654  08003654  00020070  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08003658  08003658  00013658  2**2
+  6 .init_array   00000004  08003654  08003654  00013654  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  0800365c  0800365c  0001365c  2**2
+  7 .fini_array   00000004  08003658  08003658  00013658  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000070  20000000  08003660  00020000  2**2
+  8 .data         00000070  20000000  0800365c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000000b4  20000070  080036d0  00020070  2**2
+  9 .bss          000000b4  20000070  080036cc  00020070  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000124  080036d0  00020124  2**0
+ 10 ._user_heap_stack 00000604  20000124  080036cc  00020124  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020070  2**0
                   CONTENTS, READONLY
@@ -505,11 +505,11 @@ void set_time (void)
 	  RTC_DateTypeDef sDate;
     /**Initialize RTC and set the Time and Date
     */
-  sTime.Hours = 0x17;
- 80003b6:	2317      	movs	r3, #23
+  sTime.Hours = 0x09;
+ 80003b6:	2309      	movs	r3, #9
  80003b8:	713b      	strb	r3, [r7, #4]
-  sTime.Minutes = 0x48;
- 80003ba:	2348      	movs	r3, #72	; 0x48
+  sTime.Minutes = 0x00;
+ 80003ba:	2300      	movs	r3, #0
  80003bc:	717b      	strb	r3, [r7, #5]
   sTime.Seconds = 0x00;
  80003be:	2300      	movs	r3, #0
@@ -535,8 +535,8 @@ void set_time (void)
   sDate.Month = RTC_MONTH_FEBRUARY;
  80003dc:	2302      	movs	r3, #2
  80003de:	707b      	strb	r3, [r7, #1]
-  sDate.Date = 0x13;
- 80003e0:	2313      	movs	r3, #19
+  sDate.Date = 0x15;
+ 80003e0:	2315      	movs	r3, #21
  80003e2:	70bb      	strb	r3, [r7, #2]
   sDate.Year = 0x22;
  80003e4:	2322      	movs	r3, #34	; 0x22
@@ -899,7 +899,7 @@ int main(void)
  8000630:	21c0      	movs	r1, #192	; 0xc0
  8000632:	4618      	mov	r0, r3
  8000634:	f7ff fe10 	bl	8000258 <Lcd_send_command>
-			  sprintf((char*)reminderTime,"ALARM TIME: %02d:%02d", medicineReminders[i].Hour,
+			  sprintf((char*)reminderTime,"ALARM: %02d:%02d", medicineReminders[i].Hour,
  8000638:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
  800063c:	005b      	lsls	r3, r3, #1
  800063e:	f107 02a0 	add.w	r2, r7, #160	; 0xa0
@@ -912,7 +912,7 @@ int main(void)
  8000650:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
  8000654:	440b      	add	r3, r1
  8000656:	f813 3c27 	ldrb.w	r3, [r3, #-39]
-			  sprintf((char*)reminderTime,"ALARM TIME: %02d:%02d", medicineReminders[i].Hour,
+			  sprintf((char*)reminderTime,"ALARM: %02d:%02d", medicineReminders[i].Hour,
  800065a:	f107 0038 	add.w	r0, r7, #56	; 0x38
  800065e:	498d      	ldr	r1, [pc, #564]	; (8000894 <main+0x364>)
  8000660:	f002 fb5a 	bl	8002d18 <siprintf>
@@ -939,257 +939,258 @@ int main(void)
  8000692:	db9b      	blt.n	80005cc <main+0x9c>
 		  }
 	  }
-	  HAL_Delay(300);
- 8000694:	f44f 7096 	mov.w	r0, #300	; 0x12c
- 8000698:	f000 fbca 	bl	8000e30 <HAL_Delay>
+	  HAL_Delay(100);
+ 8000694:	2064      	movs	r0, #100	; 0x64
+ 8000696:	f000 fbcb 	bl	8000e30 <HAL_Delay>
 
 	  //provera da li je pritisnuto dugme za podesavanje alarma
 	  if(HAL_GPIO_ReadPin(GPIOA, SET_MAD) == 0){
- 800069c:	2102      	movs	r1, #2
- 800069e:	487a      	ldr	r0, [pc, #488]	; (8000888 <main+0x358>)
- 80006a0:	f000 fe1e 	bl	80012e0 <HAL_GPIO_ReadPin>
- 80006a4:	4603      	mov	r3, r0
- 80006a6:	2b00      	cmp	r3, #0
- 80006a8:	d186      	bne.n	80005b8 <main+0x88>
+ 800069a:	2102      	movs	r1, #2
+ 800069c:	487a      	ldr	r0, [pc, #488]	; (8000888 <main+0x358>)
+ 800069e:	f000 fe1f 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 80006a2:	4603      	mov	r3, r0
+ 80006a4:	2b00      	cmp	r3, #0
+ 80006a6:	d187      	bne.n	80005b8 <main+0x88>
 		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) == 0);
- 80006aa:	bf00      	nop
- 80006ac:	2102      	movs	r1, #2
- 80006ae:	4876      	ldr	r0, [pc, #472]	; (8000888 <main+0x358>)
- 80006b0:	f000 fe16 	bl	80012e0 <HAL_GPIO_ReadPin>
- 80006b4:	4603      	mov	r3, r0
- 80006b6:	2b00      	cmp	r3, #0
- 80006b8:	d0f8      	beq.n	80006ac <main+0x17c>
+ 80006a8:	bf00      	nop
+ 80006aa:	2102      	movs	r1, #2
+ 80006ac:	4876      	ldr	r0, [pc, #472]	; (8000888 <main+0x358>)
+ 80006ae:	f000 fe17 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 80006b2:	4603      	mov	r3, r0
+ 80006b4:	2b00      	cmp	r3, #0
+ 80006b6:	d0f8      	beq.n	80006aa <main+0x17a>
 
 		  tempTime.Hour = 0x00;
- 80006ba:	2300      	movs	r3, #0
- 80006bc:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
+ 80006b8:	2300      	movs	r3, #0
+ 80006ba:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
 		  tempTime.Min = 0x00;
- 80006c0:	2300      	movs	r3, #0
- 80006c2:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
+ 80006be:	2300      	movs	r3, #0
+ 80006c0:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
 		  i = 0;
- 80006c6:	2300      	movs	r3, #0
- 80006c8:	f8c7 3098 	str.w	r3, [r7, #152]	; 0x98
+ 80006c4:	2300      	movs	r3, #0
+ 80006c6:	f8c7 3098 	str.w	r3, [r7, #152]	; 0x98
 
 		  Lcd_clear(&lcd);
- 80006cc:	1d3b      	adds	r3, r7, #4
- 80006ce:	4618      	mov	r0, r3
- 80006d0:	f7ff fdb6 	bl	8000240 <Lcd_clear>
+ 80006ca:	1d3b      	adds	r3, r7, #4
+ 80006cc:	4618      	mov	r0, r3
+ 80006ce:	f7ff fdb7 	bl	8000240 <Lcd_clear>
 		  int ind = 0;
- 80006d4:	2300      	movs	r3, #0
- 80006d6:	f8c7 308c 	str.w	r3, [r7, #140]	; 0x8c
+ 80006d2:	2300      	movs	r3, #0
+ 80006d4:	f8c7 308c 	str.w	r3, [r7, #140]	; 0x8c
 		  //dok god ne pritisnemo opet dugme da potvrdimo unete alarme ili dok nije dostignut max broj alarma
 		  //podesavamo alarme
-		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS-1) {
- 80006da:	e097      	b.n	800080c <main+0x2dc>
+		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS) {
+ 80006d8:	e097      	b.n	800080a <main+0x2da>
 			  ind = 1;
- 80006dc:	2301      	movs	r3, #1
- 80006de:	f8c7 308c 	str.w	r3, [r7, #140]	; 0x8c
+ 80006da:	2301      	movs	r3, #1
+ 80006dc:	f8c7 308c 	str.w	r3, [r7, #140]	; 0x8c
 			  Lcd_send_command(&lcd, 0x80);
- 80006e2:	1d3b      	adds	r3, r7, #4
- 80006e4:	2180      	movs	r1, #128	; 0x80
- 80006e6:	4618      	mov	r0, r3
- 80006e8:	f7ff fdb6 	bl	8000258 <Lcd_send_command>
+ 80006e0:	1d3b      	adds	r3, r7, #4
+ 80006e2:	2180      	movs	r1, #128	; 0x80
+ 80006e4:	4618      	mov	r0, r3
+ 80006e6:	f7ff fdb7 	bl	8000258 <Lcd_send_command>
 			  sprintf((char*)reminderName,"REMINDER %02d", i + 1);
- 80006ec:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 80006f0:	1c5a      	adds	r2, r3, #1
- 80006f2:	f107 0358 	add.w	r3, r7, #88	; 0x58
- 80006f6:	4968      	ldr	r1, [pc, #416]	; (8000898 <main+0x368>)
- 80006f8:	4618      	mov	r0, r3
- 80006fa:	f002 fb0d 	bl	8002d18 <siprintf>
+ 80006ea:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 80006ee:	1c5a      	adds	r2, r3, #1
+ 80006f0:	f107 0358 	add.w	r3, r7, #88	; 0x58
+ 80006f4:	4968      	ldr	r1, [pc, #416]	; (8000898 <main+0x368>)
+ 80006f6:	4618      	mov	r0, r3
+ 80006f8:	f002 fb0e 	bl	8002d18 <siprintf>
 			  Lcd_string(&lcd, reminderName);
- 80006fe:	f107 0258 	add.w	r2, r7, #88	; 0x58
- 8000702:	1d3b      	adds	r3, r7, #4
- 8000704:	4611      	mov	r1, r2
- 8000706:	4618      	mov	r0, r3
- 8000708:	f7ff fd7c 	bl	8000204 <Lcd_string>
+ 80006fc:	f107 0258 	add.w	r2, r7, #88	; 0x58
+ 8000700:	1d3b      	adds	r3, r7, #4
+ 8000702:	4611      	mov	r1, r2
+ 8000704:	4618      	mov	r0, r3
+ 8000706:	f7ff fd7d 	bl	8000204 <Lcd_string>
 
 			  Lcd_send_command(&lcd, 0xc0);
- 800070c:	1d3b      	adds	r3, r7, #4
- 800070e:	21c0      	movs	r1, #192	; 0xc0
- 8000710:	4618      	mov	r0, r3
- 8000712:	f7ff fda1 	bl	8000258 <Lcd_send_command>
+ 800070a:	1d3b      	adds	r3, r7, #4
+ 800070c:	21c0      	movs	r1, #192	; 0xc0
+ 800070e:	4618      	mov	r0, r3
+ 8000710:	f7ff fda2 	bl	8000258 <Lcd_send_command>
 			  sprintf((char*)reminderTime,"%02d:%02d", tempTime.Hour, tempTime.Min);
- 8000716:	f897 3034 	ldrb.w	r3, [r7, #52]	; 0x34
- 800071a:	461a      	mov	r2, r3
- 800071c:	f897 3035 	ldrb.w	r3, [r7, #53]	; 0x35
- 8000720:	f107 0038 	add.w	r0, r7, #56	; 0x38
- 8000724:	495d      	ldr	r1, [pc, #372]	; (800089c <main+0x36c>)
- 8000726:	f002 faf7 	bl	8002d18 <siprintf>
+ 8000714:	f897 3034 	ldrb.w	r3, [r7, #52]	; 0x34
+ 8000718:	461a      	mov	r2, r3
+ 800071a:	f897 3035 	ldrb.w	r3, [r7, #53]	; 0x35
+ 800071e:	f107 0038 	add.w	r0, r7, #56	; 0x38
+ 8000722:	495e      	ldr	r1, [pc, #376]	; (800089c <main+0x36c>)
+ 8000724:	f002 faf8 	bl	8002d18 <siprintf>
 			  Lcd_string(&lcd, reminderTime);
- 800072a:	f107 0238 	add.w	r2, r7, #56	; 0x38
- 800072e:	1d3b      	adds	r3, r7, #4
- 8000730:	4611      	mov	r1, r2
- 8000732:	4618      	mov	r0, r3
- 8000734:	f7ff fd66 	bl	8000204 <Lcd_string>
+ 8000728:	f107 0238 	add.w	r2, r7, #56	; 0x38
+ 800072c:	1d3b      	adds	r3, r7, #4
+ 800072e:	4611      	mov	r1, r2
+ 8000730:	4618      	mov	r0, r3
+ 8000732:	f7ff fd67 	bl	8000204 <Lcd_string>
 
 			  //uvecanje sata ili minuta za +1
 			  if(HAL_GPIO_ReadPin(GPIOA, INC) == 0){
- 8000738:	2104      	movs	r1, #4
- 800073a:	4853      	ldr	r0, [pc, #332]	; (8000888 <main+0x358>)
- 800073c:	f000 fdd0 	bl	80012e0 <HAL_GPIO_ReadPin>
- 8000740:	4603      	mov	r3, r0
- 8000742:	2b00      	cmp	r3, #0
- 8000744:	d126      	bne.n	8000794 <main+0x264>
+ 8000736:	2104      	movs	r1, #4
+ 8000738:	4853      	ldr	r0, [pc, #332]	; (8000888 <main+0x358>)
+ 800073a:	f000 fdd1 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 800073e:	4603      	mov	r3, r0
+ 8000740:	2b00      	cmp	r3, #0
+ 8000742:	d126      	bne.n	8000792 <main+0x262>
 				  while(HAL_GPIO_ReadPin(GPIOA, INC) == 0);
- 8000746:	bf00      	nop
- 8000748:	2104      	movs	r1, #4
- 800074a:	484f      	ldr	r0, [pc, #316]	; (8000888 <main+0x358>)
- 800074c:	f000 fdc8 	bl	80012e0 <HAL_GPIO_ReadPin>
- 8000750:	4603      	mov	r3, r0
- 8000752:	2b00      	cmp	r3, #0
- 8000754:	d0f8      	beq.n	8000748 <main+0x218>
+ 8000744:	bf00      	nop
+ 8000746:	2104      	movs	r1, #4
+ 8000748:	484f      	ldr	r0, [pc, #316]	; (8000888 <main+0x358>)
+ 800074a:	f000 fdc9 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 800074e:	4603      	mov	r3, r0
+ 8000750:	2b00      	cmp	r3, #0
+ 8000752:	d0f8      	beq.n	8000746 <main+0x216>
 				  if(hourIndicator == 1){
- 8000756:	f8d7 3094 	ldr.w	r3, [r7, #148]	; 0x94
- 800075a:	2b01      	cmp	r3, #1
- 800075c:	d10d      	bne.n	800077a <main+0x24a>
+ 8000754:	f8d7 3094 	ldr.w	r3, [r7, #148]	; 0x94
+ 8000758:	2b01      	cmp	r3, #1
+ 800075a:	d10d      	bne.n	8000778 <main+0x248>
 					  tempTime.Hour++;
- 800075e:	f897 3034 	ldrb.w	r3, [r7, #52]	; 0x34
- 8000762:	3301      	adds	r3, #1
- 8000764:	b2db      	uxtb	r3, r3
- 8000766:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
+ 800075c:	f897 3034 	ldrb.w	r3, [r7, #52]	; 0x34
+ 8000760:	3301      	adds	r3, #1
+ 8000762:	b2db      	uxtb	r3, r3
+ 8000764:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
 					  if(tempTime.Hour == 0x18){
- 800076a:	f897 3034 	ldrb.w	r3, [r7, #52]	; 0x34
- 800076e:	2b18      	cmp	r3, #24
- 8000770:	d110      	bne.n	8000794 <main+0x264>
+ 8000768:	f897 3034 	ldrb.w	r3, [r7, #52]	; 0x34
+ 800076c:	2b18      	cmp	r3, #24
+ 800076e:	d110      	bne.n	8000792 <main+0x262>
 						  tempTime.Hour = 0x00;
- 8000772:	2300      	movs	r3, #0
- 8000774:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
- 8000778:	e00c      	b.n	8000794 <main+0x264>
+ 8000770:	2300      	movs	r3, #0
+ 8000772:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
+ 8000776:	e00c      	b.n	8000792 <main+0x262>
 					  }
 				  }
 				  else {
 					  tempTime.Min++;
- 800077a:	f897 3035 	ldrb.w	r3, [r7, #53]	; 0x35
- 800077e:	3301      	adds	r3, #1
- 8000780:	b2db      	uxtb	r3, r3
- 8000782:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
+ 8000778:	f897 3035 	ldrb.w	r3, [r7, #53]	; 0x35
+ 800077c:	3301      	adds	r3, #1
+ 800077e:	b2db      	uxtb	r3, r3
+ 8000780:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
 					  if(tempTime.Min == 0x3C){
- 8000786:	f897 3035 	ldrb.w	r3, [r7, #53]	; 0x35
- 800078a:	2b3c      	cmp	r3, #60	; 0x3c
- 800078c:	d102      	bne.n	8000794 <main+0x264>
+ 8000784:	f897 3035 	ldrb.w	r3, [r7, #53]	; 0x35
+ 8000788:	2b3c      	cmp	r3, #60	; 0x3c
+ 800078a:	d102      	bne.n	8000792 <main+0x262>
 						  tempTime.Min = 0x00;
- 800078e:	2300      	movs	r3, #0
- 8000790:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
+ 800078c:	2300      	movs	r3, #0
+ 800078e:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
 					  }
 				  }
 			  }
 
 			  //prelazak na minute ili na sledeci alarm
 			  if(HAL_GPIO_ReadPin(GPIOA, NEXT) == 0){
- 8000794:	2108      	movs	r1, #8
- 8000796:	483c      	ldr	r0, [pc, #240]	; (8000888 <main+0x358>)
- 8000798:	f000 fda2 	bl	80012e0 <HAL_GPIO_ReadPin>
- 800079c:	4603      	mov	r3, r0
- 800079e:	2b00      	cmp	r3, #0
- 80007a0:	d134      	bne.n	800080c <main+0x2dc>
+ 8000792:	2108      	movs	r1, #8
+ 8000794:	483c      	ldr	r0, [pc, #240]	; (8000888 <main+0x358>)
+ 8000796:	f000 fda3 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 800079a:	4603      	mov	r3, r0
+ 800079c:	2b00      	cmp	r3, #0
+ 800079e:	d134      	bne.n	800080a <main+0x2da>
 				  while(HAL_GPIO_ReadPin(GPIOA, NEXT) == 0);
- 80007a2:	bf00      	nop
- 80007a4:	2108      	movs	r1, #8
- 80007a6:	4838      	ldr	r0, [pc, #224]	; (8000888 <main+0x358>)
- 80007a8:	f000 fd9a 	bl	80012e0 <HAL_GPIO_ReadPin>
- 80007ac:	4603      	mov	r3, r0
- 80007ae:	2b00      	cmp	r3, #0
- 80007b0:	d0f8      	beq.n	80007a4 <main+0x274>
+ 80007a0:	bf00      	nop
+ 80007a2:	2108      	movs	r1, #8
+ 80007a4:	4838      	ldr	r0, [pc, #224]	; (8000888 <main+0x358>)
+ 80007a6:	f000 fd9b 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 80007aa:	4603      	mov	r3, r0
+ 80007ac:	2b00      	cmp	r3, #0
+ 80007ae:	d0f8      	beq.n	80007a2 <main+0x272>
 				  hourIndicator = -1 * hourIndicator;
- 80007b2:	f8d7 3094 	ldr.w	r3, [r7, #148]	; 0x94
- 80007b6:	425b      	negs	r3, r3
- 80007b8:	f8c7 3094 	str.w	r3, [r7, #148]	; 0x94
+ 80007b0:	f8d7 3094 	ldr.w	r3, [r7, #148]	; 0x94
+ 80007b4:	425b      	negs	r3, r3
+ 80007b6:	f8c7 3094 	str.w	r3, [r7, #148]	; 0x94
 				  minIndicator = -1 * minIndicator;
- 80007bc:	f8d7 3090 	ldr.w	r3, [r7, #144]	; 0x90
- 80007c0:	425b      	negs	r3, r3
- 80007c2:	f8c7 3090 	str.w	r3, [r7, #144]	; 0x90
+ 80007ba:	f8d7 3090 	ldr.w	r3, [r7, #144]	; 0x90
+ 80007be:	425b      	negs	r3, r3
+ 80007c0:	f8c7 3090 	str.w	r3, [r7, #144]	; 0x90
 
 				  if(hourIndicator == 1){
- 80007c6:	f8d7 3094 	ldr.w	r3, [r7, #148]	; 0x94
- 80007ca:	2b01      	cmp	r3, #1
- 80007cc:	d11e      	bne.n	800080c <main+0x2dc>
+ 80007c4:	f8d7 3094 	ldr.w	r3, [r7, #148]	; 0x94
+ 80007c8:	2b01      	cmp	r3, #1
+ 80007ca:	d11e      	bne.n	800080a <main+0x2da>
 					 medicineReminders[i].Hour = tempTime.Hour;
- 80007ce:	f897 2034 	ldrb.w	r2, [r7, #52]	; 0x34
- 80007d2:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 80007d6:	005b      	lsls	r3, r3, #1
- 80007d8:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
- 80007dc:	440b      	add	r3, r1
- 80007de:	f803 2c28 	strb.w	r2, [r3, #-40]
+ 80007cc:	f897 2034 	ldrb.w	r2, [r7, #52]	; 0x34
+ 80007d0:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 80007d4:	005b      	lsls	r3, r3, #1
+ 80007d6:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
+ 80007da:	440b      	add	r3, r1
+ 80007dc:	f803 2c28 	strb.w	r2, [r3, #-40]
 					 medicineReminders[i].Min = tempTime.Min;
- 80007e2:	f897 2035 	ldrb.w	r2, [r7, #53]	; 0x35
- 80007e6:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 80007ea:	005b      	lsls	r3, r3, #1
- 80007ec:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
- 80007f0:	440b      	add	r3, r1
- 80007f2:	f803 2c27 	strb.w	r2, [r3, #-39]
+ 80007e0:	f897 2035 	ldrb.w	r2, [r7, #53]	; 0x35
+ 80007e4:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 80007e8:	005b      	lsls	r3, r3, #1
+ 80007ea:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
+ 80007ee:	440b      	add	r3, r1
+ 80007f0:	f803 2c27 	strb.w	r2, [r3, #-39]
 
 					 tempTime.Hour = 0x00;
- 80007f6:	2300      	movs	r3, #0
- 80007f8:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
+ 80007f4:	2300      	movs	r3, #0
+ 80007f6:	f887 3034 	strb.w	r3, [r7, #52]	; 0x34
 					 tempTime.Min = 0x00;
- 80007fc:	2300      	movs	r3, #0
- 80007fe:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
+ 80007fa:	2300      	movs	r3, #0
+ 80007fc:	f887 3035 	strb.w	r3, [r7, #53]	; 0x35
 
 					 ++i;
- 8000802:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 8000806:	3301      	adds	r3, #1
- 8000808:	f8c7 3098 	str.w	r3, [r7, #152]	; 0x98
-		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS-1) {
- 800080c:	2102      	movs	r1, #2
- 800080e:	481e      	ldr	r0, [pc, #120]	; (8000888 <main+0x358>)
- 8000810:	f000 fd66 	bl	80012e0 <HAL_GPIO_ReadPin>
- 8000814:	4603      	mov	r3, r0
- 8000816:	2b00      	cmp	r3, #0
- 8000818:	d004      	beq.n	8000824 <main+0x2f4>
- 800081a:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 800081e:	2b08      	cmp	r3, #8
- 8000820:	f77f af5c 	ble.w	80006dc <main+0x1ac>
+ 8000800:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 8000804:	3301      	adds	r3, #1
+ 8000806:	f8c7 3098 	str.w	r3, [r7, #152]	; 0x98
+		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS) {
+ 800080a:	2102      	movs	r1, #2
+ 800080c:	481e      	ldr	r0, [pc, #120]	; (8000888 <main+0x358>)
+ 800080e:	f000 fd67 	bl	80012e0 <HAL_GPIO_ReadPin>
+ 8000812:	4603      	mov	r3, r0
+ 8000814:	2b00      	cmp	r3, #0
+ 8000816:	d004      	beq.n	8000822 <main+0x2f2>
+ 8000818:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 800081c:	2b09      	cmp	r3, #9
+ 800081e:	f77f af5c 	ble.w	80006da <main+0x1aa>
 				  }
 			  }
 		  }
 
-		  if(ind && i < MAX_REMINDERS-1){
- 8000824:	f8d7 308c 	ldr.w	r3, [r7, #140]	; 0x8c
- 8000828:	2b00      	cmp	r3, #0
- 800082a:	d01c      	beq.n	8000866 <main+0x336>
- 800082c:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 8000830:	2b08      	cmp	r3, #8
- 8000832:	dc18      	bgt.n	8000866 <main+0x336>
+		  if(ind && i < MAX_REMINDERS){
+ 8000822:	f8d7 308c 	ldr.w	r3, [r7, #140]	; 0x8c
+ 8000826:	2b00      	cmp	r3, #0
+ 8000828:	d01c      	beq.n	8000864 <main+0x334>
+ 800082a:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 800082e:	2b09      	cmp	r3, #9
+ 8000830:	dc18      	bgt.n	8000864 <main+0x334>
 			  medicineReminders[i].Hour = tempTime.Hour;
- 8000834:	f897 2034 	ldrb.w	r2, [r7, #52]	; 0x34
- 8000838:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 800083c:	005b      	lsls	r3, r3, #1
- 800083e:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
- 8000842:	440b      	add	r3, r1
- 8000844:	f803 2c28 	strb.w	r2, [r3, #-40]
+ 8000832:	f897 2034 	ldrb.w	r2, [r7, #52]	; 0x34
+ 8000836:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 800083a:	005b      	lsls	r3, r3, #1
+ 800083c:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
+ 8000840:	440b      	add	r3, r1
+ 8000842:	f803 2c28 	strb.w	r2, [r3, #-40]
 			  medicineReminders[i].Min = tempTime.Min;
- 8000848:	f897 2035 	ldrb.w	r2, [r7, #53]	; 0x35
- 800084c:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 8000850:	005b      	lsls	r3, r3, #1
- 8000852:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
- 8000856:	440b      	add	r3, r1
- 8000858:	f803 2c27 	strb.w	r2, [r3, #-39]
+ 8000846:	f897 2035 	ldrb.w	r2, [r7, #53]	; 0x35
+ 800084a:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 800084e:	005b      	lsls	r3, r3, #1
+ 8000850:	f107 01a0 	add.w	r1, r7, #160	; 0xa0
+ 8000854:	440b      	add	r3, r1
+ 8000856:	f803 2c27 	strb.w	r2, [r3, #-39]
 			  ++i;
- 800085c:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 8000860:	3301      	adds	r3, #1
- 8000862:	f8c7 3098 	str.w	r3, [r7, #152]	; 0x98
+ 800085a:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 800085e:	3301      	adds	r3, #1
+ 8000860:	f8c7 3098 	str.w	r3, [r7, #152]	; 0x98
 		  }
 
 		  //kada zavrsimo sa unosom, broj unetih cuvamo
 		  medicineRemindersCount = i;
- 8000866:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
- 800086a:	f8c7 309c 	str.w	r3, [r7, #156]	; 0x9c
+ 8000864:	f8d7 3098 	ldr.w	r3, [r7, #152]	; 0x98
+ 8000868:	f8c7 309c 	str.w	r3, [r7, #156]	; 0x9c
 		  Lcd_clear(&lcd);
- 800086e:	1d3b      	adds	r3, r7, #4
- 8000870:	4618      	mov	r0, r3
- 8000872:	f7ff fce5 	bl	8000240 <Lcd_clear>
+ 800086c:	1d3b      	adds	r3, r7, #4
+ 800086e:	4618      	mov	r0, r3
+ 8000870:	f7ff fce6 	bl	8000240 <Lcd_clear>
 	  get_time();
- 8000876:	e69f      	b.n	80005b8 <main+0x88>
- 8000878:	080035cc 	.word	0x080035cc
- 800087c:	080035dc 	.word	0x080035dc
+ 8000874:	e6a0      	b.n	80005b8 <main+0x88>
+ 8000876:	bf00      	nop
+ 8000878:	080035c8 	.word	0x080035c8
+ 800087c:	080035d8 	.word	0x080035d8
  8000880:	40010c00 	.word	0x40010c00
  8000884:	200000ec 	.word	0x200000ec
  8000888:	40010800 	.word	0x40010800
  800088c:	20000118 	.word	0x20000118
  8000890:	08003584 	.word	0x08003584
  8000894:	08003598 	.word	0x08003598
- 8000898:	080035b0 	.word	0x080035b0
- 800089c:	080035c0 	.word	0x080035c0
+ 8000898:	080035ac 	.word	0x080035ac
+ 800089c:	080035bc 	.word	0x080035bc
 
 080008a0 <SystemClock_Config>:
 /**
@@ -2033,20 +2034,35 @@ void SysTick_Handler(void)
  8000cba:	bd80      	pop	{r7, pc}
 
 08000cbc <_sbrk>:
+/**
+ _sbrk
+ Increase program data space. Malloc and related functions depend on this
+**/
+caddr_t _sbrk(int incr)
+{
  8000cbc:	b580      	push	{r7, lr}
  8000cbe:	b084      	sub	sp, #16
  8000cc0:	af00      	add	r7, sp, #0
  8000cc2:	6078      	str	r0, [r7, #4]
+	extern char end asm("end");
+	static char *heap_end;
+	char *prev_heap_end;
+
+	if (heap_end == 0)
  8000cc4:	4b11      	ldr	r3, [pc, #68]	; (8000d0c <_sbrk+0x50>)
  8000cc6:	681b      	ldr	r3, [r3, #0]
  8000cc8:	2b00      	cmp	r3, #0
  8000cca:	d102      	bne.n	8000cd2 <_sbrk+0x16>
+		heap_end = &end;
  8000ccc:	4b0f      	ldr	r3, [pc, #60]	; (8000d0c <_sbrk+0x50>)
  8000cce:	4a10      	ldr	r2, [pc, #64]	; (8000d10 <_sbrk+0x54>)
  8000cd0:	601a      	str	r2, [r3, #0]
+
+	prev_heap_end = heap_end;
  8000cd2:	4b0e      	ldr	r3, [pc, #56]	; (8000d0c <_sbrk+0x50>)
  8000cd4:	681b      	ldr	r3, [r3, #0]
  8000cd6:	60fb      	str	r3, [r7, #12]
+	if (heap_end + incr > stack_ptr)
  8000cd8:	4b0c      	ldr	r3, [pc, #48]	; (8000d0c <_sbrk+0x50>)
  8000cda:	681a      	ldr	r2, [r3, #0]
  8000cdc:	687b      	ldr	r3, [r7, #4]
@@ -2054,19 +2070,28 @@ void SysTick_Handler(void)
  8000ce0:	466a      	mov	r2, sp
  8000ce2:	4293      	cmp	r3, r2
  8000ce4:	d907      	bls.n	8000cf6 <_sbrk+0x3a>
+	{
+		errno = ENOMEM;
  8000ce6:	f001 ffe5 	bl	8002cb4 <__errno>
  8000cea:	4602      	mov	r2, r0
  8000cec:	230c      	movs	r3, #12
  8000cee:	6013      	str	r3, [r2, #0]
+		return (caddr_t) -1;
  8000cf0:	f04f 33ff 	mov.w	r3, #4294967295
  8000cf4:	e006      	b.n	8000d04 <_sbrk+0x48>
+	}
+
+	heap_end += incr;
  8000cf6:	4b05      	ldr	r3, [pc, #20]	; (8000d0c <_sbrk+0x50>)
  8000cf8:	681a      	ldr	r2, [r3, #0]
  8000cfa:	687b      	ldr	r3, [r7, #4]
  8000cfc:	4413      	add	r3, r2
  8000cfe:	4a03      	ldr	r2, [pc, #12]	; (8000d0c <_sbrk+0x50>)
  8000d00:	6013      	str	r3, [r2, #0]
+
+	return (caddr_t) prev_heap_end;
  8000d02:	68fb      	ldr	r3, [r7, #12]
+}
  8000d04:	4618      	mov	r0, r3
  8000d06:	3710      	adds	r7, #16
  8000d08:	46bd      	mov	sp, r7
@@ -2173,7 +2198,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000d58:	20000070 	.word	0x20000070
   ldr r2, =_sidata
- 8000d5c:	08003660 	.word	0x08003660
+ 8000d5c:	0800365c 	.word	0x0800365c
   ldr r2, =_sbss
  8000d60:	20000070 	.word	0x20000070
   ldr r4, =_ebss
@@ -4881,7 +4906,7 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  8001c86:	bf00      	nop
  8001c88:	40022000 	.word	0x40022000
  8001c8c:	40021000 	.word	0x40021000
- 8001c90:	0800360c 	.word	0x0800360c
+ 8001c90:	08003608 	.word	0x08003608
  8001c94:	20000000 	.word	0x20000000
  8001c98:	20000004 	.word	0x20000004
 
@@ -5030,8 +5055,8 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8001d46:	bc90      	pop	{r4, r7}
  8001d48:	4770      	bx	lr
  8001d4a:	bf00      	nop
- 8001d4c:	080035e4 	.word	0x080035e4
- 8001d50:	080035f4 	.word	0x080035f4
+ 8001d4c:	080035e0 	.word	0x080035e0
+ 8001d50:	080035f0 	.word	0x080035f0
  8001d54:	40021000 	.word	0x40021000
  8001d58:	007a1200 	.word	0x007a1200
  8001d5c:	003d0900 	.word	0x003d0900
@@ -5079,7 +5104,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8001d90:	4618      	mov	r0, r3
  8001d92:	bd80      	pop	{r7, pc}
  8001d94:	40021000 	.word	0x40021000
- 8001d98:	0800361c 	.word	0x0800361c
+ 8001d98:	08003618 	.word	0x08003618
 
 08001d9c <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -5105,7 +5130,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8001db8:	4618      	mov	r0, r3
  8001dba:	bd80      	pop	{r7, pc}
  8001dbc:	40021000 	.word	0x40021000
- 8001dc0:	0800361c 	.word	0x0800361c
+ 8001dc0:	08003618 	.word	0x08003618
 
 08001dc4 <RCC_Delay>:
   * @brief  This function provides delay (in milliseconds) based on CPU cycles method.
@@ -5615,8 +5640,8 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk)
  80020c6:	3734      	adds	r7, #52	; 0x34
  80020c8:	46bd      	mov	sp, r7
  80020ca:	bd90      	pop	{r4, r7, pc}
- 80020cc:	080035f8 	.word	0x080035f8
- 80020d0:	08003608 	.word	0x08003608
+ 80020cc:	080035f4 	.word	0x080035f4
+ 80020d0:	08003604 	.word	0x08003604
  80020d4:	40021000 	.word	0x40021000
  80020d8:	007a1200 	.word	0x007a1200
  80020dc:	003d0900 	.word	0x003d0900
@@ -7913,10 +7938,10 @@ uint32_t HAL_RTCEx_BKUPRead(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister)
  8002cf2:	4798      	blx	r3
  8002cf4:	3501      	adds	r5, #1
  8002cf6:	e7f2      	b.n	8002cde <__libc_init_array+0x1e>
- 8002cf8:	08003658 	.word	0x08003658
- 8002cfc:	08003658 	.word	0x08003658
- 8002d00:	08003658 	.word	0x08003658
- 8002d04:	0800365c 	.word	0x0800365c
+ 8002cf8:	08003654 	.word	0x08003654
+ 8002cfc:	08003654 	.word	0x08003654
+ 8002d00:	08003654 	.word	0x08003654
+ 8002d04:	08003658 	.word	0x08003658
 
 08002d08 <memset>:
  8002d08:	4603      	mov	r3, r0
@@ -8234,9 +8259,9 @@ uint32_t HAL_RTCEx_BKUPRead(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister)
  8002fe0:	f000 f882 	bl	80030e8 <_printf_i>
  8002fe4:	e7ea      	b.n	8002fbc <_svfiprintf_r+0x1b0>
  8002fe6:	bf00      	nop
- 8002fe8:	08003624 	.word	0x08003624
- 8002fec:	0800362a 	.word	0x0800362a
- 8002ff0:	0800362e 	.word	0x0800362e
+ 8002fe8:	08003620 	.word	0x08003620
+ 8002fec:	08003626 	.word	0x08003626
+ 8002ff0:	0800362a 	.word	0x0800362a
  8002ff4:	00000000 	.word	0x00000000
  8002ff8:	08002d59 	.word	0x08002d59
 
@@ -8572,8 +8597,8 @@ uint32_t HAL_RTCEx_BKUPRead(RTC_HandleTypeDef *hrtc, uint32_t BackupRegister)
  80032fa:	f104 0542 	add.w	r5, r4, #66	; 0x42
  80032fe:	f884 3042 	strb.w	r3, [r4, #66]	; 0x42
  8003302:	e76c      	b.n	80031de <_printf_i+0xf6>
- 8003304:	08003635 	.word	0x08003635
- 8003308:	08003646 	.word	0x08003646
+ 8003304:	08003631 	.word	0x08003631
+ 8003308:	08003642 	.word	0x08003642
 
 0800330c <memchr>:
  800330c:	b510      	push	{r4, lr}

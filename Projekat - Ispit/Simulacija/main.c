@@ -29,7 +29,7 @@
 #define INC GPIO_PIN_2
 #define SET_MAD GPIO_PIN_1
 
-#define MAX_REMINDERS 10
+#define MAX_REMINDERS 3
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -100,7 +100,7 @@ void set_time (void)
 	  Error_Handler();
   }
 
-  sDate.WeekDay = RTC_WEEKDAY_SUNDAY;
+  sDate.WeekDay = RTC_WEEKDAY_TUESDAY;
   sDate.Month = RTC_MONTH_FEBRUARY;
   sDate.Date = 0x15;
   sDate.Year = 0x22;
@@ -176,6 +176,10 @@ int main(void)
 
 	int hourIndicator = 1;
 	int minIndicator = -1;
+	
+	int stmMadPressed = 0;
+	int incPressed = 0;
+	int nextPressed = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -249,11 +253,11 @@ int main(void)
 			  beep();
 		  }
 	  }
-	  HAL_Delay(100);
+	  HAL_Delay(200);
 
 	  //provera da li je pritisnuto dugme za podesavanje alarma
-	  if(HAL_GPIO_ReadPin(GPIOA, SET_MAD) == 0){
-		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) == 0);
+	  if(stmMadPressed == 0){
+		  stmMadPressed = 1;
 
 		  tempTime.Hour = 0x00;
 		  tempTime.Min = 0x00;
@@ -261,9 +265,10 @@ int main(void)
 
 		  Lcd_clear(&lcd);
 		  int ind = 0;
+		  int count = 0;
 		  //dok god ne pritisnemo opet dugme da potvrdimo unete alarme ili dok nije dostignut max broj alarma
 		  //podesavamo alarme
-		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS) {
+		  while(stmMadPressed != 0 && i < MAX_REMINDERS) {
 			  ind = 1;
 			  Lcd_send_command(&lcd, 0x80);
 			  sprintf((char*)reminderName,"REMINDER %02d", i + 1);
@@ -274,8 +279,8 @@ int main(void)
 			  Lcd_string(&lcd, reminderTime);
 
 			  //uvecanje sata ili minuta za +1
-			  if(HAL_GPIO_ReadPin(GPIOA, INC) == 0){
-				  while(HAL_GPIO_ReadPin(GPIOA, INC) == 0);
+			  if(incPressed == 0){
+				  count++;
 				  if(hourIndicator == 1){
 					  tempTime.Hour++;
 					  if(tempTime.Hour == 0x18){
@@ -283,7 +288,7 @@ int main(void)
 					  }
 				  }
 				  else {
-					  tempTime.Min++;
+					  tempTime.Min = 0x01;
 					  if(tempTime.Min == 0x3C){
 						  tempTime.Min = 0x00;
 					  }
@@ -291,11 +296,10 @@ int main(void)
 			  }
 
 			  //prelazak na minute ili na sledeci alarm
-			  if(HAL_GPIO_ReadPin(GPIOA, NEXT) == 0){
-				  while(HAL_GPIO_ReadPin(GPIOA, NEXT) == 0);
+			  if(nextPressed == 0 && count >=9){
 				  hourIndicator = -1 * hourIndicator;
 				  minIndicator = -1 * minIndicator;
-
+				  count = 5;
 				  if(hourIndicator == 1){
 					 medicineReminders[i].Hour = tempTime.Hour;
 					 medicineReminders[i].Min = tempTime.Min;
@@ -304,6 +308,7 @@ int main(void)
 					 tempTime.Min = 0x00;
 
 					 ++i;
+					 HAL_Delay(500);
 				  }
 			  }
 		  }
