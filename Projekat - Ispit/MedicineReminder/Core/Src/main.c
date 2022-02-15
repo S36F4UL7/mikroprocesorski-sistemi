@@ -314,101 +314,13 @@ int main(void)
 
 		  //kada zavrsimo sa unosom, broj unetih cuvamo
 		  medicineRemindersCount = i;
+		  Lcd_clear(&lcd);
 	  }
 
     /* USER CODE END 3 */
   }
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-	  //ucitaj trenutno vreme i datum
-	  get_time();
-	  //prikazi trenutno vreme i datum
-	  display_time(&lcd);
-
-	  //provera da li postoji neki alarm u ovo vreme
-	  for(i=0; i<medicineRemindersCount; i++){
-		  if(medicineReminders[i].Hour == currentTime.Hour
-			&& medicineReminders[i].Min == currentTime.Min){
-			  Lcd_clear(&lcd);
-
-			  Lcd_send_command(&lcd, 0x80);
-			  sprintf((char*)reminderName,"TAKE MEDICINE %02d", i + 1);
-			  Lcd_string(&lcd, reminderName);
-
-			  Lcd_send_command(&lcd, 0xc0);
-			  sprintf((char*)reminderTime,"ALARM TIME: %02d:%02d", medicineReminders[i].Hour, medicineReminders[i].Min);
-			  Lcd_string(&lcd, reminderTime);
-
-			  beep();
-			  beep();
-			  beep();
-		  }
-	  }
-	  HAL_Delay(300);
-
-	  //provera da li je pritisnuto dugme za podesavanje alarma
-	  if(HAL_GPIO_ReadPin(GPIOA, SET_MAD) == 0){
-//		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) == 0);
-
-		  tempTime.Hour = 0x00;
-		  tempTime.Min = 0x00;
-		  i = 0;
-
-		  Lcd_clear(&lcd);
-
-		  //dok god ne pritisnemo opet dugme da potvrdimo unete alarme ili dok nije dostignut max broj alarma
-		  //podesavamo alarme
-		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS) {
-			  Lcd_send_command(&lcd, 0x80);
-			  sprintf((char*)reminderName,"REMINDER %02d", i + 1);
-			  Lcd_string(&lcd, reminderName);
-
-			  Lcd_send_command(&lcd, 0xc0);
-			  sprintf((char*)reminderTime,"%02d:%02d", tempTime.Hour, tempTime.Min);
-			  Lcd_string(&lcd, reminderTime);
-
-			  //uvecanje sata ili minuta za +1
-			  if(HAL_GPIO_ReadPin(GPIOA, INC) == 0){
-				  if(hourIndicator == 1){
-					  tempTime.Hour++;
-					  if(tempTime.Hour == 0x18){
-						  tempTime.Hour = 0x00;
-					  }
-				  }
-				  else {
-					  tempTime.Min++;
-					  if(tempTime.Min == 0x3C){
-						  tempTime.Min = 0x00;
-					  }
-				  }
-
-				  while(HAL_GPIO_ReadPin(GPIOA, INC) == 0);
-			  }
-
-			  //prelazak na minute ili na sledeci alarm
-			  if(HAL_GPIO_ReadPin(GPIOA, NEXT) == 0){
-				  hourIndicator = -1 * hourIndicator;
-				  minIndicator = -1 * minIndicator;
-
-				  if(hourIndicator == 1){
-					 medicineReminders[i].Hour = tempTime.Hour;
-					 medicineReminders[i].Min = tempTime.Min;
-
-					 tempTime.Hour = 0x00;
-					 tempTime.Min = 0x00;
-
-					 ++i;
-				  }
-				  while(HAL_GPIO_ReadPin(GPIOA, NEXT) == 0);
-			  }
-		  }
-
-		  medicineRemindersCount = i;
-	  }
-
-  /* USER CODE END 3 */
 }
+    /* USER CODE END WHILE */
 
 /**
   * @brief System Clock Configuration
