@@ -43,8 +43,8 @@ MedicineReminder.bin \
 all: MedicineReminder.elf secondary-outputs
 
 # Tool invocations
-MedicineReminder.elf: $(OBJS) $(USER_OBJS) C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV\ godina\MS\Projekat\ -\ Ispit\MedicineReminder\STM32F103C6TX_FLASH.ld
-	arm-none-eabi-gcc -o "MedicineReminder.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\Projekat - Ispit\MedicineReminder\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedicineReminder.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+MedicineReminder.elf: $(OBJS) $(USER_OBJS) C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV\ godina\MS\mikroprocesorski-sistemi\Projekat\ -\ Ispit\MedicineReminder\STM32F103C6TX_FLASH.ld
+	arm-none-eabi-gcc -o "MedicineReminder.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\PC-Korisnik\Desktop\NikolaRnjak_80-2018\IV godina\MS\mikroprocesorski-sistemi\Projekat - Ispit\MedicineReminder\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedicineReminder.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
