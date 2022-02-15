@@ -99,9 +99,6 @@ void set_time (void)
   {
 	  Error_Handler();
   }
-  /* USER CODE BEGIN RTC_Init 3 */
-
-  /* USER CODE END RTC_Init 3 */
 
   sDate.WeekDay = RTC_WEEKDAY_SUNDAY;
   sDate.Month = RTC_MONTH_FEBRUARY;
@@ -112,11 +109,8 @@ void set_time (void)
   {
 	  Error_Handler();
   }
-  /* USER CODE BEGIN RTC_Init 4 */
 
   HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, 0x32F2);  // backup register
-
-  /* USER CODE END RTC_Init 4 */
 }
 
 //funkcija za kreiranje stringova za vreme i datum, koji se prikazuju na lcd-u
@@ -246,7 +240,8 @@ int main(void)
 			  Lcd_string(&lcd, reminderName);
 
 			  Lcd_send_command(&lcd, 0xc0);
-			  sprintf((char*)reminderTime,"ALARM TIME: %02d:%02d", medicineReminders[i].Hour, medicineReminders[i].Min);
+			  sprintf((char*)reminderTime,"ALARM TIME: %02d:%02d", medicineReminders[i].Hour,
+					  medicineReminders[i].Min);
 			  Lcd_string(&lcd, reminderTime);
 
 			  beep();
@@ -265,10 +260,11 @@ int main(void)
 		  i = 0;
 
 		  Lcd_clear(&lcd);
-
+		  int ind = 0;
 		  //dok god ne pritisnemo opet dugme da potvrdimo unete alarme ili dok nije dostignut max broj alarma
 		  //podesavamo alarme
-		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS) {
+		  while(HAL_GPIO_ReadPin(GPIOA, SET_MAD) != 0 && i < MAX_REMINDERS-1) {
+			  ind = 1;
 			  Lcd_send_command(&lcd, 0x80);
 			  sprintf((char*)reminderName,"REMINDER %02d", i + 1);
 			  Lcd_string(&lcd, reminderName);
@@ -310,6 +306,12 @@ int main(void)
 					 ++i;
 				  }
 			  }
+		  }
+
+		  if(ind && i < MAX_REMINDERS-1){
+			  medicineReminders[i].Hour = tempTime.Hour;
+			  medicineReminders[i].Min = tempTime.Min;
+			  ++i;
 		  }
 
 		  //kada zavrsimo sa unosom, broj unetih cuvamo
